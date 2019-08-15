@@ -6,8 +6,8 @@
     <div class="card-product-infos">
       <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
     </div>
-    <div class="card-product-infos">
-      <p>Last review : "<%= cocktail.reviews.last.content %>"</p>
+    <div>
+      <p>Last review : <% cocktail.reviews.last.rating.times do %><i class="fas fa-star"></i><% end %> - "<%= cocktail.reviews.last.content %>"</p>
     </div>
   </div>
 <% end %>
