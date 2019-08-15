@@ -1,4 +1,13 @@
 <h1>All the cocktails</h1>
+
 <% @cocktails.each do |cocktail| %>
-  <p> <%= link_to cocktail.name, cocktail_path(cocktail) %> </p>
+  <div class="card-product">
+    <%= image_tag cocktail.image_url %>
+    <div class="card-product-infos">
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    </div>
+    <div class="card-product-infos">
+      <p>Last review : "<%= cocktail.reviews.last.content %>"</p>
+    </div>
+  </div>
 <% end %>
