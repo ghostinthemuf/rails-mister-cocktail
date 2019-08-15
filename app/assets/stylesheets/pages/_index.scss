@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.cocktail-pic {
+  display: flex;
+
+  a {
+    color: white;
+  }
+
+  li {
+    color: white;
+    font-weight: bolder;
+    font-size: 0.9em;
+  }
+}
+
