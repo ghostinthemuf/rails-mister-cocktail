@@ -5,4 +5,19 @@
 
 <%= render 'new_dose_form', cocktail: @cocktail, dose: @dose %>
 
+<hr>
+
+<% @cocktail.reviews.each do |review| %>
+  <p>
+    <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <%= review.content %>
+  </p>
+<% end %>
+
+<%= render 'new_review_form', cocktail: @cocktail, review: @review %>
+
+<hr>
+
 <p><%= link_to "Go back to cocktails list", cocktails_path %></p>
