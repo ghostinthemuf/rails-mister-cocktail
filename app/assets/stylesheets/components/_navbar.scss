@@ -8,7 +8,8 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px;
+  margin-right: 15px;
 }
 
 .container-cocktail {
@@ -27,4 +28,10 @@
     font-weight: bolder;
     font-size: 0.9em;
   }
+}
+
+.navbar span {
+  font-family: 'Leckerli One', cursive;
+  font-size: 1.6rem;
+  color: #D94E49;
 }

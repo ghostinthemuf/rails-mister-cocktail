@@ -29,7 +29,7 @@
           <% (5 - review.rating).times do %>
             <i class="far fa-star"></i>
           <% end %>
-          "<%= review.content %>" posté <%= review.created_at.to_date.strftime("le %d/%m/%Y") %>
+          "<%= review.content %>" <em>posté <%= review.created_at.to_date.strftime("le %d/%m/%Y") %></em>
         </p>
       <% end %>
     </div>
