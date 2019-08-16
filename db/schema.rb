@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_144756) do
+ActiveRecord::Schema.define(version: 2019_08_16_113936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_144756) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url"
+    t.string "photo"
   end
 
   create_table "doses", force: :cascade do |t|
@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 2019_08_15_144756) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.bigint "cocktail_id"
     t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["cocktail_id"], name: "index_reviews_on_cocktail_id"
   end
 
