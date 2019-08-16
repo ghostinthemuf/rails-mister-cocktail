@@ -14,3 +14,17 @@
 .container-cocktail {
   padding-top: 80px;
 }
+
+.cocktail-pic {
+  display: flex;
+
+  a {
+    color: white;
+  }
+
+  li {
+    color: white;
+    font-weight: bolder;
+    font-size: 0.9em;
+  }
+}
