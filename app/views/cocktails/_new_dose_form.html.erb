@@ -1,17 +1,17 @@
-<h2>Add a new ingredient 🍸</h2>
+<h2>Ajoutez un ingrédient 🍸</h2>
 
 <%= simple_form_for [cocktail, dose] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= f.label :rating, 'Which ingredient ?' %>
+    <%= f.label :rating, 'Lequel ?' %>
     <%= f.association :ingredient, label: false %>
   </div>
   <div class="form-inputs">
-    <%= f.label :rating, 'Which dose ?' %>
+    <%= f.label :rating, 'Quelle quantité ?' %>
     <%= f.input :description, label: false %>
   </div>
   <div class="form-actions">
-    <%= f.submit "Add this dose", class: "btn btn-green" %>
+    <%= f.submit "Ajoutez cet ingrédient", class: "btn btn-green" %>
   </div>
 <% end %>

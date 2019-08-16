@@ -1,4 +1,4 @@
-<h1>All the cocktails</h1>
+<h1 class="my-4">Tous nos cocktails</h1>
 
 <% @cocktails.each do |cocktail| %>
   <div class="card-product">
@@ -8,10 +8,8 @@
     </div>
     <% if !cocktail.reviews.last.nil? %>
       <div>
-        <p>Last review : <% cocktail.reviews.last.rating.times do %><i class="fas fa-star"></i><% end %><% (5 - cocktail.reviews.last.rating).times do %><i class="far fa-star"></i><% end %> - "<%= cocktail.reviews.last.content %>"</p>
+        <p>Dernier avis : <% cocktail.reviews.last.rating.times do %><i class="fas fa-star"></i><% end %><% (5 - cocktail.reviews.last.rating).times do %><i class="far fa-star"></i><% end %> - "<%= cocktail.reviews.last.content %>"</p>
       </div>
     <% end %>
   </div>
 <% end %>
-
-<%= cl_image_tag("kzwlyljmbhu1l2fovx4e", width: 400, height: 300, crop: :fill) %>

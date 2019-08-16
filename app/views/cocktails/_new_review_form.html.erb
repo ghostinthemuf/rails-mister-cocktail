@@ -1,17 +1,17 @@
-<h2>Add your review 🤩</h2>
+<h2>Ajoutez votre avis 😎</h2>
 
 <%= simple_form_for [cocktail, review] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= f.label :rating, 'Your note :' %>
+    <%= f.label :rating, 'Votre note :' %>
     <%= f.input :rating, collection: Review::RATINGS, label: false %>
   </div>
   <div class="form-inputs">
-    <%= f.label :content, 'What do YOU think ?' %>
+    <%= f.label :content, "Qu'en dites vous ?" %>
     <%= f.input :content, label: false %>
   </div>
   <div class="form-actions">
-    <%= f.submit "Add this review", class: "btn btn-green" %>
+    <%= f.submit "Jugez !", class: "btn btn-green" %>
   </div>
 <% end %>

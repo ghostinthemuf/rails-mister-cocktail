@@ -1,4 +1,4 @@
-<h1><%= @cocktail.name %></h1>
+<h1 class="my-4"><%= @cocktail.name %></h1>
 
 <div class="container">
 
@@ -6,7 +6,7 @@
     <div class="col-md-6 p-4 cocktail-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @cocktail.photo %>); background-size: cover; background-position: center">
       <ul>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name %> : <%= dose.description %> (<%= link_to "delete", dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %>) </li>
+          <li><%= dose.ingredient.name %> : <%= dose.description %> (<%= link_to "supprimer", dose_path(dose), method: :delete, data: { confirm: "Sûr ?" } %>) </li>
         <% end %>
       </ul>
     </div>
@@ -20,7 +20,7 @@
 
   <div class="row">
     <div class="col-md-6 p-4">
-      <h2>What our readers think</h2>
+      <h2>Ce que nos lecteurs en pensent</h2>
       <% @cocktail.reviews.each do |review| %>
         <p>
           <% review.rating.times do %>
@@ -29,7 +29,7 @@
           <% (5 - review.rating).times do %>
             <i class="far fa-star"></i>
           <% end %>
-          "<%= review.content %>" posted at <%= review.created_at %>
+          "<%= review.content %>" posté <%= review.created_at.to_date.strftime("le %d/%m/%Y") %>
         </p>
       <% end %>
     </div>

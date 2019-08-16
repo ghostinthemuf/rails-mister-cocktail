@@ -1,16 +1,18 @@
-<h1>Add a new cocktail</h1>
+<h1>Créez votre cocktail 🤩</h1>
 
 <%= simple_form_for @cocktail do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.label :rating, 'Nommez votre cocktail :' %>
+    <%= f.input :name, label: false %>
   </div>
   <div class="form-inputs">
-    <%= f.input :photo %>
+    <%= f.label :photo, 'Ajoutez une petite photo :' %>
+    <%= f.input :photo, label: false %>
     <%= f.input :photo_cache, as: :hidden %>
   </div>
   <div class="form-actions">
-    <%= f.submit "Add this cocktail", class: "btn btn-green" %>
+    <%= f.submit "Shake it !", class: "btn btn-green" %>
   </div>
 <% end %>
